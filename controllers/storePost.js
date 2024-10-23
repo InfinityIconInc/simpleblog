@@ -16,7 +16,7 @@ module.exports = (req, res) => {
     }
     BlogPost.create({
         ...req.body,
-        postImage: '/postimages/' + postimage,
+        postImage: '/postimages/' + postimage.name,
         userId: req.session.userId
     })
         .then((blogPost) => {
