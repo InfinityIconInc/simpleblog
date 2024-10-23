@@ -39,6 +39,7 @@ const validateUserController = require('./controllers/validateUser');
 const homePageController = require('./controllers/homePage');
 const logOutController = require('./controllers/logOut');
 const newPostController = require('./controllers/newPost');
+const storePostController = require('./controllers/storePost');
 app.get ('/signup', signupUserController);
 app.post('/signup/storeuser', storeUserController);
 app.get('/login', loginUserController);
@@ -46,6 +47,7 @@ app.post('/login/validateuser', validateUserController);
 app.get('/', homePageController);
 app.get('/logout', logOutController);
 app.get('/newpost', redirectIfNotLoginMiddleware, newPostController);
+app.post('/newpost/storepost', storePostController);
 
 app.get('/about', (req, res) => {
     res.render('about');

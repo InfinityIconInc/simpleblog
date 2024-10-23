@@ -20,6 +20,11 @@ const BlogPostSchema = new Schema({
         required: true,
         default: Date.now,
     },
+    postImage: {
+        type: String,
+        required: false,
+        default: "no-image.png",
+    }
 })
 
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
