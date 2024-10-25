@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>My Posts - ZenBlog Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="../img/favicon.png" rel="icon">
+    <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../vendor/aos/aos.css" rel="stylesheet">
+    <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: ZenBlog
+    * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+    * Updated: Aug 08 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="index-page">
+
+<%- include ('layouts/header.ejs') -%>
+<main class="main">
+
+
+    <!-- Trending Category Section -->
+    <section id="trending-category" class="trending-category section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <div class="section-title-container d-flex align-items-center justify-content-between">
+                <h2>My Posts</h2>
+                <p><a href="/myposts">See All Posts</a></p>
+            </div>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="container" data-aos="fade-up">
+                <div class="row g-5">
+                    <div class="col-lg-12">
+                        <div class="row g-5">
+                            <div class="row border-start custom-border">
+                                <% if ( posts && posts.length > 0 ) {
+                                for ( let i=0; i< posts.length; i++ ) { %>
+                                    <div class="col-lg-3">
+                                        <div class="post-entry">
+                                            <a href="blog-details.html"><img src="../<%= posts[i].postImage %>" alt="" class="img-fluid"></a>
+                                            <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">•</span> <span><%= posts[i].datePosted %></span></div>
+                                            <h2><a href="/showpost"><%= posts[i].title %></a></h2>
+                                        </div>
+                                    </div>
+                                <%
+                                }
+                            } %>
+                            <!-- Trending Section -->
+                            <div class="col-lg-3">
+
+                                <div class="trending">
+                                    <h3>Trending</h3>
+                                    <ul class="trending-post">
+                                        <li>
+                                            <a href="blog-details.html">
+                                                <span class="number">1</span>
+                                                <h3>The Best Homemade Masks for Face (keep the Pimples Away)</h3>
+                                                <span class="author">Jane Cooper</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">
+                                                <span class="number">2</span>
+                                                <h3>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h3>
+                                                <span class="author">Wade Warren</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">
+                                                <span class="number">3</span>
+                                                <h3>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h3>
+                                                <span class="author">Esther Howard</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">
+                                                <span class="number">4</span>
+                                                <h3>9 Half-up/half-down Hairstyles for Long and Medium Hair</h3>
+                                                <span class="author">Cameron Williamson</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">
+                                                <span class="number">5</span>
+                                                <h3>Life Insurance And Pregnancy: A Working Mom’s Guide</h3>
+                                                <span class="author">Jenny Wilson</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div> <!-- End Trending Section -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End .row -->
+            </div>
+
+        </div>
+
+    </section><!-- /Trending Category Section -->
+
+
+</main>
+
+<%- include ('layouts/footer') -%>
+
+</body>
+
+</html>
