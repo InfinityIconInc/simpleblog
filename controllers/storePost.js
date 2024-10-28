@@ -14,10 +14,14 @@ module.exports = (req, res) => {
                 console.log("Error Uploading Image");
             });
     }
+    let slug = req.body.title.toLowerCase().trim()
+        .replace(/[\s\W-]+/g, '-')
+        .replace(/^-+|-+$/g, '');
     BlogPost.create({
         ...req.body,
         postImage: '/postimages/' + postimage.name,
-        userId: req.session.userId
+        userId: req.session.userId,
+        postSlug: slug,
     })
         .then((blogPost) => {
             console.log("Post Created");

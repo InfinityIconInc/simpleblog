@@ -63,9 +63,9 @@
                                 for ( let i=0; i< posts.length; i++ ) { %>
                                     <div class="col-lg-3">
                                         <div class="post-entry">
-                                            <a href="blog-details.html"><img src="../<%= posts[i].postImage %>" alt="" class="img-fluid"></a>
+                                            <a href="/<%= posts[i].postSlug %>"><img src="../<%= posts[i].postImage %>" alt="" class="img-fluid"></a>
                                             <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">•</span> <span><%= posts[i].datePosted %></span></div>
-                                            <h2><a href="/showpost"><%= posts[i].title %></a></h2>
+                                            <h2><a href="/<%= posts[i].postSlug %>"><%= posts[i].title %></a></h2>
                                         </div>
                                     </div>
                                 <%

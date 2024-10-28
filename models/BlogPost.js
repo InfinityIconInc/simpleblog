@@ -24,7 +24,12 @@ const BlogPostSchema = new Schema({
         type: String,
         required: false,
         default: "no-image.png",
-    }
+    },
+    postSlug: {
+        type: String,
+        required: false,
+
+    },
 })
 
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
